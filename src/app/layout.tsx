@@ -1,28 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Bodoni_Moda, Jost } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/lib/smoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { businessConfig } from "@/lib/business-config";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const instrumentSerif = Instrument_Serif({
+const bodoni = Bodoni_Moda({ 
   subsets: ["latin"],
   variable: "--font-serif",
-  display: "swap",
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"]
+});
+
+const jost = Jost({ 
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600"]
 });
 
 export const metadata: Metadata = {
-  title: `${businessConfig.name} — ${businessConfig.tagline}`,
+  title: `${businessConfig.name} | ${businessConfig.tagline}`,
   description: businessConfig.shortBio,
   keywords: [
     "PPF Lahore",
@@ -33,13 +31,6 @@ export const metadata: Metadata = {
     "Car wrapping Lahore",
     "Auto spa Lahore",
   ],
-  openGraph: {
-    title: `${businessConfig.name} — ${businessConfig.tagline}`,
-    description: businessConfig.shortBio,
-    siteName: businessConfig.name,
-    locale: "en_US",
-    type: "website",
-  },
 };
 
 export default function RootLayout({
@@ -48,41 +39,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
-      <body>
+    <html lang="en" className="dark">
+      <body className={`${jost.variable} ${bodoni.variable} font-sans bg-[var(--color-obsidian)] text-[var(--color-silver)] antialiased`}>
         <SmoothScrollProvider>
           <Navbar />
-          <main className="min-h-screen pt-20">{children}</main>
+          <main>
+            {children}
+          </main>
+          {/* We are removing the old footer render as we have it in page.tsx, or we can just leave it if page.tsx doesn't have it.
+          Wait, I put a footer in page.tsx. Let's just not render Footer here for the homepage. 
+          Actually, let's keep <Footer /> here and remove the one I added in page.tsx. */}
           <Footer />
         </SmoothScrollProvider>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "AutoRepair",
-              "name": businessConfig.name,
-              "description": businessConfig.shortBio,
-              "telephone": businessConfig.phone.international,
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": businessConfig.location.primary.address,
-                "addressLocality": businessConfig.location.primary.city,
-                "addressRegion": businessConfig.location.primary.province,
-                "addressCountry": "PK"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": businessConfig.rating.score,
-                "reviewCount": businessConfig.rating.reviewCount,
-                "bestRating": "5",
-                "worstRating": "1"
-              },
-              "openingHours": "Mo-Sa 10:00-20:00"
-            })
-          }}
-        />
       </body>
     </html>
   );
