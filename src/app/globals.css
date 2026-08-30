@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  /* Protomotive Precision Studio Palette */
+  --color-obsidian: #090A0D;
+  --color-carbon: #111318;
+  --color-graphite: #181B22;
+  --color-graphite-light: #222631;
+  --color-border-subtle: #242936;
+  --color-border-bright: #363D4F;
+  
+  --color-amber-gold: #E5A93C;
+  --color-amber-gold-light: #F7C86A;
+  --color-azure: #38BDF8;
+  
+  --color-pure-white: #FFFFFF;
+  --color-silver: #E2E8F0;
+  --color-slate-muted: #8E96A4;
+  --color-slate-dark: #4B5563;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  /* Type scale */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 19px;
+  --text-xl: 26px;
+  --text-2xl: 38px;
+  --text-3xl: 52px;
+  --text-4xl: 68px;
+  --text-5xl: 84px;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--color-obsidian);
+  color: var(--color-silver);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-amber-gold);
+  color: var(--color-obsidian);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-graphite-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-amber-gold);
+}
+
+/* Eyebrow label utility */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-amber-gold);
+}
+
+.eyebrow-muted {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-slate-muted);
+}
+
+/* Headline utility */
+.headline {
+  font-family: var(--font-serif);
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+/* Precision grid background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Glow gradient */
+.hero-glow {
+  background: radial-gradient(circle 800px at 50% -20%, rgba(229, 169, 60, 0.12), transparent 70%);
+}
+
+/* Hairline glass surface */
+.studio-glass {
+  background: rgba(17, 19, 24, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.studio-card {
+  background: var(--color-carbon);
+  border: 1px solid var(--color-border-subtle);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.studio-card:hover {
+  border-color: var(--color-border-bright);
+}
+
+/* Nav Link */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-amber-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
