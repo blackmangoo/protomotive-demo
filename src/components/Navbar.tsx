@@ -9,27 +9,27 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
       {/* Top Announcement Bar - High Contrast */}
-      <div className="bg-white text-[var(--color-obsidian)] text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase py-2.5 px-6 text-center shadow-md relative z-20">
+      <div className="bg-white text-[var(--color-obsidian)] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase py-2.5 px-6 text-center shadow-md relative z-20">
         PRECISION PAINT PROTECTION & AUTOMOTIVE DETAILING STUDIO
       </div>
 
       {/* Main Navbar */}
       <div className="bg-[var(--color-obsidian)]/80 backdrop-blur-2xl border-b border-[var(--color-border-subtle)] relative z-10">
-        <div className="max-w-[1400px] mx-auto px-6 h-24 flex items-center justify-between">
-          {/* Brand Logo - Made much larger and styled pure white to fix the blue color clash */}
-          <Link href="/" className="flex flex-col justify-center transition-opacity hover:opacity-80">
+        <div className="max-w-[1400px] mx-auto px-6 h-28 flex items-center justify-between">
+          {/* Brand Logo - Dramatically increased scale */}
+          <Link href="/" className="flex flex-col justify-center transition-opacity hover:opacity-80 py-2">
             <Image 
               src="/logo.png" 
               alt="Protomotive Logo" 
-              width={260} 
-              height={80} 
-              className="h-12 md:h-16 w-auto object-contain brightness-0 invert" 
+              width={380} 
+              height={140} 
+              className="h-16 md:h-20 w-auto object-contain brightness-0 invert" 
               priority
             />
           </Link>
 
-          {/* Navigation links - Increased Spacing */}
-          <nav className="hidden lg:flex items-center gap-12 text-[12px] tracking-[0.15em] uppercase font-medium text-[var(--color-silver)]">
+          {/* Navigation links */}
+          <nav className="hidden lg:flex items-center gap-12 text-[12px] tracking-[0.15em] uppercase font-bold text-[var(--color-silver)]">
             <Link href="#services" className="nav-link hover:text-white transition-colors">
               Services
             </Link>
@@ -44,13 +44,13 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Action button - Increased Spacing */}
+          {/* Action button */}
           <div className="flex items-center gap-8">
             <a
               href={businessConfig.phone.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden xl:flex items-center gap-2 text-[13px] font-mono text-[var(--color-silver)] hover:text-[var(--color-amber-gold)] transition-colors"
+              className="hidden xl:flex items-center gap-2 text-[13px] font-mono font-bold text-[var(--color-silver)] hover:text-[var(--color-amber-gold)] transition-colors"
             >
               <Phone className="w-4 h-4 text-[var(--color-amber-gold)]" />
               <span>{businessConfig.phone.display}</span>
@@ -60,7 +60,7 @@ export default function Navbar() {
               href={businessConfig.phone.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-7 py-3 bg-[var(--color-amber-gold)] text-[var(--color-obsidian)] text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all active:scale-95 shadow-md"
+              className="inline-flex items-center gap-3 px-8 py-3.5 bg-[var(--color-amber-gold)] text-[var(--color-obsidian)] text-[11px] font-extrabold uppercase tracking-widest hover:bg-white transition-all active:scale-95 shadow-lg"
             >
               <span>Book Consultation</span>
               <ArrowUpRight className="w-4 h-4" />

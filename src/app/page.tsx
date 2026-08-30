@@ -65,8 +65,6 @@ export default function Home() {
       
       <section className="relative">
         <HeroScrub frameCount={240} framePath="/assets/hero-frames/">
-          {/* Heavy Scrim to ensure text legibility against scratchy/reflective backgrounds */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-[var(--color-obsidian)]/60 to-black/30 pointer-events-none z-0" />
           
           <div className="relative w-full h-full flex flex-col items-center justify-start pointer-events-none px-6 pt-[22vh] md:pt-[28vh] pb-12 z-10">
             <div ref={headlineRef} className="max-w-5xl mx-auto text-center space-y-10 pointer-events-auto flex flex-col items-center mt-12 md:mt-0">
@@ -78,17 +76,14 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* Cohesive Font: Removed disjointed serif, using light italic sans-serif for accent */}
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white max-w-4xl mx-auto drop-shadow-2xl opacity-0 leading-tight">
                 Shield your asset from <span className="italic font-light text-[var(--color-amber-gold)] block mt-2">Lahore's elements.</span>
               </h1>
 
-              {/* Condensed copy with generous line-height for readability */}
-              <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto font-light leading-[2] opacity-0 text-shadow-sm">
+              <p className="text-base sm:text-lg text-white max-w-xl mx-auto font-light leading-[2] opacity-0 drop-shadow-md">
                 {businessConfig.shortBio}
               </p>
 
-              {/* Prominent Hero CTA */}
               <div className="pt-6 opacity-0">
                 <MagneticButton 
                   as="a" 

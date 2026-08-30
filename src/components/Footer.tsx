@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { businessConfig } from "@/lib/business-config";
 import { MapPin, Clock, Star, ArrowUpRight } from "lucide-react";
 
@@ -10,14 +11,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-[var(--color-border-subtle)]">
           {/* Col 1: Brand & Positioning */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-[var(--color-amber-gold)] flex items-center justify-center text-[var(--color-obsidian)] font-bold">
-                <span className="font-serif italic text-lg text-black font-semibold">P</span>
-              </div>
-              <span className="text-lg font-semibold tracking-wider text-white uppercase">
-                {businessConfig.name}
-              </span>
+              <Image 
+                src="/logo.png" 
+                alt="Protomotive Logo" 
+                width={200} 
+                height={60} 
+                className="h-8 w-auto object-contain brightness-0 invert opacity-90" 
+              />
             </div>
             <p className="text-sm leading-relaxed text-[var(--color-slate-muted)]">
               {businessConfig.shortBio}
@@ -30,8 +32,8 @@ export default function Footer() {
 
           {/* Col 2: Services */}
           <div>
-            <h4 className="eyebrow text-white mb-6">Master Treatments</h4>
-            <ul className="space-y-3 text-sm">
+            <h4 className="text-xs tracking-[0.2em] uppercase text-white mb-6 font-bold">Master Treatments</h4>
+            <ul className="space-y-4 text-sm">
               {businessConfig.services.map((service) => (
                 <li key={service.id}>
                   <Link
@@ -47,54 +49,42 @@ export default function Footer() {
 
           {/* Col 3: Studio Locations */}
           <div>
-            <h4 className="eyebrow text-white mb-6">Facilities</h4>
+            <h4 className="text-xs tracking-[0.2em] uppercase text-white mb-6 font-bold">Facilities</h4>
             <div className="space-y-5 text-sm">
               <div className="space-y-1">
                 <p className="text-white font-medium flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-[var(--color-amber-gold)] shrink-0" />
                   {businessConfig.location.primary.label}
                 </p>
-                <p className="text-xs text-[var(--color-slate-muted)] pl-5">
+                <p className="text-xs text-[var(--color-slate-muted)] pl-5 leading-relaxed">
                   {businessConfig.location.primary.address}
                 </p>
-                <p className="text-xs text-[var(--color-slate-muted)] pl-5 italic">
+                <p className="text-[11px] text-[var(--color-slate-muted)] pl-5 italic mt-1">
                   ({businessConfig.location.primary.landmark})
                 </p>
               </div>
-
-              {businessConfig.location.secondary && (
-                <div className="space-y-1">
-                  <p className="text-white font-medium flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 text-[var(--color-amber-gold)] shrink-0" />
-                    {businessConfig.location.secondary.label}
-                  </p>
-                  <p className="text-xs text-[var(--color-slate-muted)] pl-5">
-                    {businessConfig.location.secondary.address}
-                  </p>
-                </div>
-              )}
             </div>
           </div>
 
           {/* Col 4: Direct Intake & Hours */}
           <div>
-            <h4 className="eyebrow text-white mb-6">Operating Schedule</h4>
-            <div className="space-y-3 text-sm">
+            <h4 className="text-xs tracking-[0.2em] uppercase text-white mb-6 font-bold">Operating Schedule</h4>
+            <div className="space-y-4 text-sm">
               <div className="flex items-start gap-2">
                 <Clock className="w-3.5 h-3.5 text-[var(--color-amber-gold)] shrink-0 mt-1" />
-                <div className="text-xs space-y-1">
-                  <p><span className="text-white">Mon – Thu & Sat:</span> {businessConfig.hours.weekdays}</p>
-                  <p><span className="text-white">Friday:</span> {businessConfig.hours.friday}</p>
-                  <p><span className="text-white">Sunday:</span> {businessConfig.hours.sunday}</p>
+                <div className="text-xs space-y-2">
+                  <p><span className="text-white">Mon — Thu & Sat:</span><br/>{businessConfig.hours.weekdays}</p>
+                  <p><span className="text-white">Friday:</span><br/>{businessConfig.hours.friday}</p>
+                  <p><span className="text-white">Sunday:</span><br/>{businessConfig.hours.sunday}</p>
                 </div>
               </div>
 
-              <div className="pt-3">
+              <div className="pt-4">
                 <a
                   href={businessConfig.phone.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-[var(--color-carbon)] border border-[var(--color-border-subtle)] hover:border-[var(--color-amber-gold)] text-white text-xs font-semibold uppercase tracking-wider transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-[var(--color-carbon)] border border-[var(--color-border-subtle)] hover:border-[var(--color-amber-gold)] text-white text-xs font-bold uppercase tracking-widest transition-colors"
                 >
                   <span>Direct Line: {businessConfig.phone.display}</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[var(--color-amber-gold)]" />

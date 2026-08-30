@@ -15,7 +15,7 @@ export default function HeroScrub({ frameCount, framePath, children }: HeroScrub
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loaded, setLoaded] = useState(false);
 
-  // Pad numbers with leading zeros (e.g. 1 -> 001)
+  // Pad numbers with leading zeros
   const pad = (num: number, size = 3) => {
     let s = num + "";
     while (s.length < size) s = "0" + s;
@@ -25,7 +25,6 @@ export default function HeroScrub({ frameCount, framePath, children }: HeroScrub
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Load all frames
     const imgs: HTMLImageElement[] = [];
     let loadedCount = 0;
     
@@ -118,15 +117,17 @@ export default function HeroScrub({ frameCount, framePath, children }: HeroScrub
 
   return (
     <div ref={containerRef} className="relative w-full h-[250vh]">
-      <div className="sticky top-0 w-full h-screen overflow-hidden bg-[var(--color-obsidian)]">
+      <div className="sticky top-0 w-full h-screen overflow-hidden bg-black">
+        {/* Increased opacity to 100 so animation is vibrant and completely visible */}
         <canvas
           ref={canvasRef}
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-obsidian)]/80 via-transparent to-[var(--color-obsidian)]/90" />
         
-        {/* Render children inside the sticky container so they stay put while scrubbing */}
-        <div className="absolute inset-0 z-20">
+        {/* Deeply reduced scrim, only subtle edge darkening so it doesn't block the car */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50 pointer-events-none" />
+        
+        <div className="absolute inset-0 z-20 pointer-events-none">
           {children}
         </div>
       </div>
