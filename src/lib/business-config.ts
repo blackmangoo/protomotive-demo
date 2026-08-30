@@ -78,7 +78,7 @@ export const businessConfig: BusinessConfig = {
   name: "Protomotive",
   legalName: "Protomotive Car Care Studio",
   tagline: "Precision Paint Protection & Automotive Detailing Studio",
-  shortBio: "Lahore's dedicated automotive preservation studio specializing in high-grade TPU paint protection films, ceramic nanotechnology coatings, and precision multi-stage paint correction.",
+  shortBio: "Lahore's premier automotive preservation studio. We specialize in advanced TPU paint protection films, ceramic nanotechnology, and flawless paint correction.",
   category: "Auto Detailing & Paint Protection Studio",
   phone: {
     display: "0300 5005666",
@@ -122,8 +122,8 @@ export const businessConfig: BusinessConfig = {
   services: [
     {
       id: "detailing",
-      title: "Precision Detailing",
-      shortDescription: "Drive away with a flawless, mirror-like finish that turns heads and commands respect on every road.",
+      title: "Flawless Paint Correction",
+      shortDescription: "Restore your vehicle's factory gloss. Our multi-stage correction eliminates swirls and imperfections, revealing a flawless, mirror-like finish.",
       detailedDescription: "Multi-stage rotary compounding eliminating swirls.",
       highlights: [],
       featured: true,
@@ -132,7 +132,7 @@ export const businessConfig: BusinessConfig = {
     {
       id: "ppf",
       title: "Paint Protection Film (PPF)",
-      shortDescription: "Drive with absolute peace of mind knowing your factory paint is shielded from stone chips, scratches, and local road debris.",
+      shortDescription: "Drive with absolute confidence. Our self-healing TPU films permanently shield your asset from stone chips, scratches, and harsh road elements.",
       detailedDescription: "Self-healing TPU film engineered to shield factory paint.",
       highlights: [],
       featured: true,
@@ -140,8 +140,8 @@ export const businessConfig: BusinessConfig = {
     },
     {
       id: "ceramic-coating",
-      title: "Ceramic Coating",
-      shortDescription: "Never worry about fading paint again with a permanent, glass-like barrier that actively repels dust, hard water, and extreme UV rays.",
+      title: "Ceramic & Graphene Coatings",
+      shortDescription: "Lock in the gloss. A permanent molecular barrier that actively repels dust, hard water, and extreme UV rays—making maintenance effortless.",
       detailedDescription: "Permanent 9H/10H molecular clearcoat protection.",
       highlights: [],
       featured: true,
@@ -149,8 +149,8 @@ export const businessConfig: BusinessConfig = {
     },
     {
       id: "wraps",
-      title: "Vehicle Wraps",
-      shortDescription: "Completely transform your vehicle's character overnight while preserving the original paint underneath.",
+      title: "Bespoke Vinyl Wraps",
+      shortDescription: "Transform your vehicle's character overnight with premium color-change vinyl, completely preserving the original paint underneath.",
       detailedDescription: "Bespoke color change vinyl transformations.",
       highlights: [],
       featured: false,
@@ -159,7 +159,7 @@ export const businessConfig: BusinessConfig = {
     {
       id: "maintenance",
       title: "Studio Maintenance",
-      shortDescription: "Keep your investment looking showroom-ready year-round with our safe, pH-neutral maintenance wash programs.",
+      shortDescription: "Maintain showroom perfection year-round. Safe, pH-neutral maintenance wash programs designed exclusively for coated and filmed vehicles.",
       detailedDescription: "Safe wash programs.",
       highlights: [],
       featured: false,
