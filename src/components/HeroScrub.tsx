@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 import { gsap } from "@/lib/gsapConfig";
 
 interface HeroScrubProps {
   frameCount: number;
   framePath: string;
+  children?: ReactNode;
 }
 
-export default function HeroScrub({ frameCount, framePath }: HeroScrubProps) {
+export default function HeroScrub({ frameCount, framePath, children }: HeroScrubProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
@@ -28,13 +29,11 @@ export default function HeroScrub({ frameCount, framePath }: HeroScrubProps) {
     const imgs: HTMLImageElement[] = [];
     let loadedCount = 0;
     
-    // We start from 1 since ffmpeg usually outputs frame_001.webp
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       img.src = `${framePath}frame_${pad(i)}.webp`;
       img.onload = () => {
         loadedCount++;
-        // Allow rendering as soon as the first few frames load to prevent a blank screen
         if (loadedCount >= 5 && !loaded) {
           setLoaded(true);
         }
@@ -52,7 +51,6 @@ export default function HeroScrub({ frameCount, framePath }: HeroScrubProps) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Set canvas dimensions based on the first image
     const img = images[0];
     if (img.width && img.height) {
       canvas.width = img.width;
@@ -69,7 +67,6 @@ export default function HeroScrub({ frameCount, framePath }: HeroScrubProps) {
       if (targetImg && targetImg.complete && targetImg.naturalWidth !== 0) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
-        // Calculate crop/cover dimensions to fill the canvas like object-fit: cover
         const hRatio = canvas.width / targetImg.width;
         const vRatio = canvas.height / targetImg.height;
         const ratio = Math.max(hRatio, vRatio);
@@ -91,12 +88,9 @@ export default function HeroScrub({ frameCount, framePath }: HeroScrubProps) {
       }
     };
 
-    // Render the initial frame
     render(0);
 
-    // Create the GSAP ScrollTrigger
     const scrollTracker = { frame: 0 };
-    
     const mm = gsap.matchMedia();
     
     mm.add("(prefers-reduced-motion: no-preference)", () => {
@@ -107,15 +101,14 @@ export default function HeroScrub({ frameCount, framePath }: HeroScrubProps) {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=250%",
-          scrub: 0.5, // Slight smoothing
+          end: "+=200%",
+          scrub: 0.5,
         },
         onUpdate: () => render(Math.round(scrollTracker.frame)),
       });
       return () => tl.kill();
     });
     
-    // For users with reduced motion, just show the final glorious state
     mm.add("(prefers-reduced-motion: reduce)", () => {
       render(frameCount - 1);
     });
@@ -130,8 +123,12 @@ export default function HeroScrub({ frameCount, framePath }: HeroScrubProps) {
           ref={canvasRef}
           className="w-full h-full object-cover opacity-80"
         />
-        {/* The overlay gradient to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-obsidian)]/60 via-transparent to-[var(--color-obsidian)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-obsidian)]/80 via-transparent to-[var(--color-obsidian)]/90" />
+        
+        {/* Render children inside the sticky container so they stay put while scrubbing */}
+        <div className="absolute inset-0 z-20">
+          {children}
+        </div>
       </div>
     </div>
   );

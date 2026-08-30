@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { businessConfig } from "@/lib/business-config";
-import { MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import HeroScrub from "@/components/HeroScrub";
 import MagneticButton from "@/components/MagneticButton";
 import UnderlineLink from "@/components/UnderlineLink";
@@ -19,9 +19,7 @@ function FadeUpRow({ children, reverse }: { children: React.ReactNode; reverse?:
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center ${
-        reverse ? "" : ""
-      }`}
+      className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center`}
     >
       {children}
     </motion.div>
@@ -35,11 +33,11 @@ export default function Home() {
     if (headlineRef.current) {
       gsap.fromTo(
         headlineRef.current.children,
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: 1.4,
           stagger: 0.15,
           ease: "power3.out",
           delay: 0.2, // Small delay for loading
@@ -53,42 +51,42 @@ export default function Home() {
       
       {/* HERO SECTION WITH SCRUB */}
       <section className="relative">
-        <HeroScrub frameCount={240} framePath="/assets/hero-frames/" />
-        
-        {/* Overlay Content */}
-        <div className="absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center pointer-events-none px-6 z-10 pt-20">
-          <div ref={headlineRef} className="max-w-6xl mx-auto text-center space-y-8 pointer-events-auto flex flex-col items-center">
-            
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 border border-[var(--color-border-subtle)] text-xs backdrop-blur-md bg-[var(--color-obsidian)]/50 tracking-widest uppercase opacity-0">
-              <span className="w-2 h-2 rounded-full bg-[var(--color-amber-gold)] animate-pulse" />
-              <span className="text-[var(--color-silver)]">{businessConfig.tagline}</span>
+        <HeroScrub frameCount={240} framePath="/assets/hero-frames/">
+          {/* Overlay Content */}
+          <div className="w-full h-full flex flex-col items-center justify-center pointer-events-none px-6 pt-24 pb-12">
+            <div ref={headlineRef} className="max-w-6xl mx-auto text-center space-y-8 pointer-events-auto flex flex-col items-center mt-12 md:mt-0">
+              
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 border border-[var(--color-border-subtle)] text-xs backdrop-blur-md bg-[var(--color-obsidian)]/50 tracking-widest uppercase opacity-0">
+                <span className="w-2 h-2 rounded-full bg-[var(--color-amber-gold)] animate-pulse" />
+                <span className="text-[var(--color-silver)]">{businessConfig.tagline}</span>
+              </div>
+
+              <h1 className="text-5xl sm:text-7xl md:text-8xl font-normal text-white max-w-5xl mx-auto drop-shadow-2xl opacity-0">
+                Shield your asset from <span className="italic text-[var(--color-amber-gold)] font-serif block mt-2">Lahore's elements</span>.
+              </h1>
+
+              <p className="text-lg sm:text-xl text-[var(--color-slate-muted)] max-w-2xl mx-auto font-light leading-relaxed opacity-0">
+                {businessConfig.shortBio}
+              </p>
+
+              <div className="pt-8 opacity-0">
+                <MagneticButton 
+                  as="a" 
+                  href={businessConfig.phone.whatsapp}
+                  className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[var(--color-amber-gold)] text-[var(--color-obsidian)] text-xs font-semibold uppercase tracking-widest hover:bg-[var(--color-amber-gold-light)] transition-colors"
+                >
+                  <span>Reserve Consultation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </MagneticButton>
+              </div>
+              
             </div>
-
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-normal text-white max-w-5xl mx-auto drop-shadow-2xl opacity-0">
-              Shield your asset from <span className="italic text-[var(--color-amber-gold)] font-serif block mt-2">Lahore's elements</span>.
-            </h1>
-
-            <p className="text-lg sm:text-xl text-[var(--color-slate-muted)] max-w-2xl mx-auto font-light leading-relaxed opacity-0">
-              {businessConfig.shortBio}
-            </p>
-
-            <div className="pt-8 opacity-0">
-              <MagneticButton 
-                as="a" 
-                href={businessConfig.phone.whatsapp}
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[var(--color-amber-gold)] text-[var(--color-obsidian)] text-xs font-semibold uppercase tracking-widest hover:bg-[var(--color-amber-gold-light)] transition-colors"
-              >
-                <span>Reserve Consultation</span>
-                <ArrowRight className="w-4 h-4" />
-              </MagneticButton>
-            </div>
-            
           </div>
-        </div>
+        </HeroScrub>
       </section>
 
       {/* ASYMMETRIC SERVICES SECTION */}
-      <section className="py-32 md:py-48 max-w-[1400px] mx-auto px-6 space-y-32 md:space-y-48">
+      <section id="services" className="py-32 md:py-48 max-w-[1400px] mx-auto px-6 space-y-32 md:space-y-48">
         <div className="space-y-4 border-b border-[var(--color-border-subtle)] pb-12 mb-24">
           <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-amber-gold)]">Studio Capabilities</span>
           <h2 className="text-4xl sm:text-6xl text-white font-serif italic">
@@ -124,7 +122,6 @@ export default function Home() {
 
               {/* Visual Side (spans 7 cols) */}
               <div className={`lg:col-span-7 h-[400px] sm:h-[600px] bg-[var(--color-carbon)] relative overflow-hidden group ${isReverse ? 'lg:order-1' : ''}`}>
-                {/* Abstract placeholder visual for asymmetric layout */}
                 <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-[var(--color-obsidian)] to-[var(--color-amber-gold)]/20 mix-blend-overlay group-hover:scale-105 transition-transform duration-1000 ease-out" />
                 <div className="absolute inset-0 border border-[var(--color-border-subtle)] m-4" />
                 <div className="absolute bottom-8 left-8 text-[10px] uppercase tracking-widest font-mono text-[var(--color-slate-muted)]">
@@ -151,7 +148,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Masonry Layout Placeholder */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="h-[400px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)]" />
             <div className="h-[600px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)] hidden md:block" />
@@ -161,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT & LOCATION */}
-      <section className="py-32 md:py-48 max-w-[1400px] mx-auto px-6">
+      <section id="location" className="py-32 md:py-48 max-w-[1400px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           
           <div className="space-y-12">
@@ -199,7 +195,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Map Placeholder */}
           <div className="h-[500px] lg:h-auto bg-[var(--color-carbon)] relative group overflow-hidden border border-[var(--color-border-subtle)]">
             <div className="absolute inset-0 bg-black/40 mix-blend-multiply pointer-events-none z-10" />
             <iframe 
@@ -213,19 +208,6 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Footer */}
-      <footer className="border-t border-[var(--color-border-subtle)] py-12 px-6">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-xs text-[var(--color-slate-muted)] uppercase tracking-wider">
-            &copy; {new Date().getFullYear()} {businessConfig.legalName}
-          </div>
-          <div className="flex gap-6 text-xs text-[var(--color-slate-muted)] uppercase tracking-wider">
-            <UnderlineLink href={businessConfig.socials.instagram}>Instagram</UnderlineLink>
-            <UnderlineLink href={businessConfig.socials.facebook}>Facebook</UnderlineLink>
-          </div>
-        </div>
-      </footer>
-
       {/* Sticky Mobile CTA */}
       <div className="md:hidden fixed bottom-0 left-0 w-full p-4 pb-safe bg-[var(--color-obsidian)]/90 backdrop-blur-md border-t border-[var(--color-border-subtle)] z-50">
         <a
