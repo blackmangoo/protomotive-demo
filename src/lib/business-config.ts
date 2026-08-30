@@ -77,8 +77,8 @@ export interface BusinessConfig {
 export const businessConfig: BusinessConfig = {
   name: "Protomotive",
   legalName: "Protomotive Car Care Studio",
-  tagline: "Precision Paint Protection & Automotive Detailing Studio",
-  shortBio: "Lahore's premier automotive preservation studio. We specialize in advanced TPU paint protection films, ceramic nanotechnology, and flawless paint correction.",
+  tagline: "Professional Auto Detailing & Protection Studio",
+  shortBio: "Lahore's premier destination for high-end vehicle care. Specializing in TPU Paint Protection Film, Ceramic & Graphene coatings, and multi-stage paint correction.",
   category: "Auto Detailing & Paint Protection Studio",
   phone: {
     display: "0300 5005666",
@@ -89,16 +89,24 @@ export const businessConfig: BusinessConfig = {
   email: "info@protomotive.pk",
   location: {
     primary: {
-      label: "Barki Road Studio (Main)",
-      address: "Main Barki Road, Block D, Park View CHS",
-      landmark: "Opposite Attock Petrol Station",
-      area: "Park View",
+      label: "Main Barki Road Studio",
+      address: "Main Barki Road, Opposite Paragon City Gate #1",
+      landmark: "Near Paragon City",
+      area: "Barki",
       city: "Lahore",
       province: "Punjab",
       country: "Pakistan",
       googleMapsUrl: "https://maps.google.com/?q=Protomotive+Barki+Road+Lahore",
       note: "Primary detailing facility featuring climate-controlled application bays.",
     },
+    secondary: {
+      label: "DHA Phase 5 Studio",
+      address: "JAC Defence Motors, near State Life, DHA Phase 5, Ring Road",
+      area: "DHA Phase 5",
+      city: "Lahore",
+      country: "Pakistan",
+      note: "Convenient drop-off for DHA residents.",
+    }
   },
   rating: {
     score: 4.8,
@@ -122,8 +130,8 @@ export const businessConfig: BusinessConfig = {
   services: [
     {
       id: "detailing",
-      title: "Flawless Paint Correction",
-      shortDescription: "Restore your vehicle's factory gloss. Our multi-stage correction eliminates swirls and imperfections, revealing a flawless, mirror-like finish.",
+      title: "Paint Correction & Detailing",
+      shortDescription: "Eliminate swirl marks and scratches. Our multi-stage compound polishing restores your vehicle's factory gloss, followed by deep interior steam cleaning and leather conditioning.",
       detailedDescription: "Multi-stage rotary compounding eliminating swirls.",
       highlights: [],
       featured: true,
@@ -132,7 +140,7 @@ export const businessConfig: BusinessConfig = {
     {
       id: "ppf",
       title: "Paint Protection Film (PPF)",
-      shortDescription: "Drive with absolute confidence. Our self-healing TPU films permanently shield your asset from stone chips, scratches, and harsh road elements.",
+      shortDescription: "The ultimate defense. We apply high-grade, self-healing TPU film that acts as an invisible shield against stone chips, scratches, and UV degradation.",
       detailedDescription: "Self-healing TPU film engineered to shield factory paint.",
       highlights: [],
       featured: true,
@@ -141,7 +149,7 @@ export const businessConfig: BusinessConfig = {
     {
       id: "ceramic-coating",
       title: "Ceramic & Graphene Coatings",
-      shortDescription: "Lock in the gloss. A permanent molecular barrier that actively repels dust, hard water, and extreme UV rays—making maintenance effortless.",
+      shortDescription: "Unmatched gloss and hydrophobic performance. These advanced molecular coatings actively repel dust, chemicals, and hard water spots.",
       detailedDescription: "Permanent 9H/10H molecular clearcoat protection.",
       highlights: [],
       featured: true,
@@ -149,8 +157,8 @@ export const businessConfig: BusinessConfig = {
     },
     {
       id: "wraps",
-      title: "Bespoke Vinyl Wraps",
-      shortDescription: "Transform your vehicle's character overnight with premium color-change vinyl, completely preserving the original paint underneath.",
+      title: "Vehicle Wraps & Styling",
+      shortDescription: "Completely transform your vehicle's look with premium color-change vinyl wraps, while preserving the original paint underneath.",
       detailedDescription: "Bespoke color change vinyl transformations.",
       highlights: [],
       featured: false,
@@ -159,7 +167,7 @@ export const businessConfig: BusinessConfig = {
     {
       id: "maintenance",
       title: "Studio Maintenance",
-      shortDescription: "Maintain showroom perfection year-round. Safe, pH-neutral maintenance wash programs designed exclusively for coated and filmed vehicles.",
+      shortDescription: "Keep your investment looking flawless. We offer specialized maintenance washes, oil changes, and routine care designed specifically for coated and filmed vehicles.",
       detailedDescription: "Safe wash programs.",
       highlights: [],
       featured: false,
