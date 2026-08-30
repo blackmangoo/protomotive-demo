@@ -6,6 +6,7 @@ export interface ServiceItem {
   highlights: string[];
   featured: boolean;
   category: string;
+  videoUrl?: string;
 }
 
 export interface BusinessConfig {
@@ -136,6 +137,7 @@ export const businessConfig: BusinessConfig = {
       highlights: [],
       featured: true,
       category: "restoration",
+      videoUrl: "/assets/services/paint-correction.mp4",
     },
     {
       id: "ppf",
@@ -145,6 +147,7 @@ export const businessConfig: BusinessConfig = {
       highlights: [],
       featured: true,
       category: "protection",
+      videoUrl: "/assets/services/ppf.mp4",
     },
     {
       id: "ceramic-coating",
@@ -154,6 +157,7 @@ export const businessConfig: BusinessConfig = {
       highlights: [],
       featured: true,
       category: "protection",
+      videoUrl: "/assets/services/ceramic-coating.mp4",
     },
     {
       id: "wraps",
@@ -163,6 +167,7 @@ export const businessConfig: BusinessConfig = {
       highlights: [],
       featured: false,
       category: "styling",
+      videoUrl: "/assets/services/vinyl-wraps.mp4",
     },
     {
       id: "maintenance",
@@ -172,6 +177,7 @@ export const businessConfig: BusinessConfig = {
       highlights: [],
       featured: false,
       category: "maintenance",
+      videoUrl: "/assets/services/maintenance.mp4",
     },
   ],
   reviewThemes: [],

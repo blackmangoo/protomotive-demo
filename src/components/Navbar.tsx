@@ -14,16 +14,16 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-[var(--color-obsidian)]/80 backdrop-blur-2xl border-b border-[var(--color-border-subtle)] relative z-10">
-        <div className="max-w-[1400px] mx-auto px-6 h-28 flex items-center justify-between">
-          {/* Brand Logo - Dramatically increased scale */}
-          <Link href="/" className="flex flex-col justify-center transition-opacity hover:opacity-80 py-2">
+      <div className="bg-[var(--color-obsidian)]/85 backdrop-blur-2xl border-b border-[var(--color-border-subtle)] relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
+          {/* Brand Logo - Balanced luxury scale */}
+          <Link href="/" className="flex flex-col justify-center transition-opacity hover:opacity-80 py-1">
             <Image 
               src="/logo.png" 
               alt="Protomotive Logo" 
-              width={380} 
-              height={140} 
-              className="h-16 md:h-20 w-auto object-contain brightness-0 invert" 
+              width={340} 
+              height={100} 
+              className="h-10 md:h-14 w-auto object-contain brightness-0 invert" 
               priority
             />
           </Link>

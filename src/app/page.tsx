@@ -66,29 +66,29 @@ export default function Home() {
       <section className="relative">
         <HeroScrub frameCount={240} framePath="/assets/hero-frames/">
           
-          <div className="relative w-full h-full flex flex-col items-center justify-start pointer-events-none px-6 pt-[22vh] md:pt-[28vh] pb-12 z-10">
-            <div ref={headlineRef} className="max-w-5xl mx-auto text-center space-y-10 pointer-events-auto flex flex-col items-center mt-12 md:mt-0">
+          <div className="relative w-full h-full flex flex-col items-center justify-start pointer-events-none px-6 pt-[14vh] md:pt-[18vh] pb-12 z-10">
+            <div ref={headlineRef} className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8 pointer-events-auto flex flex-col items-center mt-6 md:mt-0">
               
-              <div className="flex flex-col items-center gap-4 opacity-0">
+              <div className="flex flex-col items-center gap-3 opacity-0">
                 <hr className="w-12 border-t-2 border-[var(--color-amber-gold)]/60 mx-auto" />
                 <span className="text-[10px] tracking-[0.25em] text-[var(--color-silver)] uppercase font-semibold">
                   {businessConfig.tagline}
                 </span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white max-w-4xl mx-auto drop-shadow-2xl opacity-0 leading-tight">
-                Shield your asset from <span className="italic font-light text-[var(--color-amber-gold)] block mt-2">Lahore's elements.</span>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white max-w-5xl mx-auto drop-shadow-2xl opacity-0 leading-[1.15] tracking-tight">
+                Shield your asset from <span className="italic font-light text-[var(--color-amber-gold)] block md:inline md:mt-0">Lahore's elements.</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-white max-w-xl mx-auto font-light leading-[2] opacity-0 drop-shadow-md">
+              <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-light leading-relaxed opacity-0 drop-shadow-md">
                 {businessConfig.shortBio}
               </p>
 
-              <div className="pt-6 opacity-0">
+              <div className="pt-4 opacity-0">
                 <MagneticButton 
                   as="a" 
                   href="#services"
-                  className="inline-flex items-center justify-center gap-4 px-10 py-5 bg-[var(--color-amber-gold)] text-[var(--color-obsidian)] text-xs font-bold uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                  className="inline-flex items-center justify-center gap-4 px-8 md:px-10 py-4 md:py-5 bg-[var(--color-amber-gold)] text-[var(--color-obsidian)] text-xs font-bold uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
                 >
                   <span>Explore Our Packages</span>
                   <ArrowRight className="w-4 h-4" />
@@ -101,10 +101,10 @@ export default function Home() {
       </section>
 
       {/* ASYMMETRIC SERVICES SECTION */}
-      <section id="services" className="py-32 md:py-48 max-w-[1400px] mx-auto px-6 space-y-32 md:space-y-48">
-        <div className="space-y-4 border-b border-[var(--color-border-subtle)] pb-12 mb-24">
+      <section id="services" className="py-24 md:py-40 max-w-[1400px] mx-auto px-6 space-y-24 md:space-y-36">
+        <div className="space-y-4 border-b border-[var(--color-border-subtle)] pb-12 mb-16 md:mb-24">
           <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-amber-gold)] font-bold">Studio Capabilities</span>
-          <h2 className="text-4xl sm:text-6xl text-white font-light tracking-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl text-white font-light tracking-tight">
             Precision <span className="italic font-serif text-[var(--color-amber-gold)]">Treatments</span>
           </h2>
         </div>
@@ -115,20 +115,20 @@ export default function Home() {
           return (
             <FadeUpRow key={service.id} reverse={isReverse}>
               {/* Text Side */}
-              <div className={`lg:col-span-5 space-y-8 ${isReverse ? 'lg:order-2 lg:pl-12' : 'lg:pr-12'}`}>
+              <div className={`lg:col-span-5 space-y-6 md:space-y-8 ${isReverse ? 'lg:order-2 lg:pl-12' : 'lg:pr-12'}`}>
                 <div className="space-y-4">
                   <span className="text-xs font-mono tracking-wider text-[var(--color-slate-muted)]">
                     0{idx + 1} — {service.category.toUpperCase()}
                   </span>
-                  <h3 className="text-3xl sm:text-4xl font-normal text-white tracking-wide">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-wide">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-[var(--color-silver)] leading-loose font-light">
+                  <p className="text-base sm:text-lg text-[var(--color-silver)] leading-relaxed font-light">
                     {service.shortDescription}
                   </p>
                 </div>
                 
-                <div className="pt-8">
+                <div className="pt-4 md:pt-6">
                   <UnderlineLink href={businessConfig.phone.whatsapp} className="text-[var(--color-amber-gold)] text-xs uppercase tracking-[0.2em] font-semibold gap-2">
                     Inquire via WhatsApp <ArrowUpRight className="w-3 h-3" />
                   </UnderlineLink>
@@ -136,11 +136,26 @@ export default function Home() {
               </div>
 
               {/* Visual Side */}
-              <div className={`lg:col-span-7 h-[400px] sm:h-[600px] bg-[var(--color-carbon)] relative overflow-hidden group ${isReverse ? 'lg:order-1' : ''}`}>
-                <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-[var(--color-obsidian)] to-[var(--color-amber-gold)]/30 mix-blend-overlay group-hover:scale-105 transition-transform duration-1000 ease-out" />
-                <div className="absolute inset-0 border border-[var(--color-border-subtle)] m-4" />
-                <div className="absolute bottom-8 left-8 text-[10px] uppercase tracking-widest font-mono text-[var(--color-slate-muted)]">
-                  {service.title} / Data Sheet
+              <div className={`lg:col-span-7 h-[320px] sm:h-[480px] md:h-[520px] bg-[var(--color-carbon)] relative overflow-hidden group border border-[var(--color-border-subtle)] ${isReverse ? 'lg:order-1' : ''}`}>
+                {service.videoUrl ? (
+                  <video
+                    src={service.videoUrl}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-[var(--color-carbon)]" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)]/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 border border-white/5 m-3 pointer-events-none" />
+                <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-amber-gold)] animate-pulse" />
+                  <span className="text-[11px] uppercase tracking-[0.2em] font-mono text-[var(--color-silver)] font-medium">
+                    {service.title} / Studio Demo
+                  </span>
                 </div>
               </div>
             </FadeUpRow>
@@ -148,25 +163,69 @@ export default function Home() {
         })}
       </section>
 
-      {/* GALLERY SECTION (Placeholder) */}
-      <section className="py-32 md:py-48 bg-[var(--color-carbon)] border-y border-[var(--color-border-subtle)]">
-        <div className="max-w-[1400px] mx-auto px-6 space-y-24">
+      {/* GALLERY SECTION */}
+      <section className="py-24 md:py-36 bg-[var(--color-carbon)] border-y border-[var(--color-border-subtle)]">
+        <div className="max-w-[1400px] mx-auto px-6 space-y-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="space-y-4 max-w-2xl">
               <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-amber-gold)] font-bold">Visual Proof</span>
-              <h2 className="text-4xl sm:text-6xl text-white font-light tracking-tight">
-                Illustrative <span className="italic font-serif text-[var(--color-amber-gold)]">Imagery</span>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl text-white font-light tracking-tight">
+                Studio <span className="italic font-serif text-[var(--color-amber-gold)]">Execution</span>
               </h2>
             </div>
-            <p className="text-sm text-[var(--color-slate-muted)] max-w-sm leading-loose">
-              Note: The following images serve as illustrative sample work demonstrating the level of gloss and precision expected.
+            <p className="text-xs sm:text-sm text-[var(--color-slate-muted)] max-w-md leading-relaxed">
+              Every vehicle undergoes rigorous multi-point surface inspection in climate-controlled bays at our Barki Road facility.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="h-[400px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)]" />
-            <div className="h-[600px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)] hidden md:block" />
-            <div className="h-[500px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)] hidden lg:block" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="group relative h-[360px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)] overflow-hidden">
+              <video
+                src="/assets/services/ceramic-coating.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 space-y-1">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">9H Molecular Coat</span>
+                <p className="text-base text-white font-medium">Hydrophobic Surface Reflection</p>
+              </div>
+            </div>
+
+            <div className="group relative h-[360px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)] overflow-hidden">
+              <video
+                src="/assets/services/ppf.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 space-y-1">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">Self-Healing TPU</span>
+                <p className="text-base text-white font-medium">Precision Edge-Wrapped Shield</p>
+              </div>
+            </div>
+
+            <div className="group relative h-[360px] bg-[var(--color-obsidian)] border border-[var(--color-border-subtle)] overflow-hidden">
+              <video
+                src="/assets/services/paint-correction.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 space-y-1">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">Multi-Stage Rotary</span>
+                <p className="text-base text-white font-medium">100% Swirl-Free Mirror Gloss</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
