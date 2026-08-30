@@ -9,21 +9,21 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
       {/* Top Announcement Bar - High Contrast */}
-      <div className="bg-white text-[var(--color-obsidian)] text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase py-2 px-6 text-center shadow-md">
+      <div className="bg-white text-[var(--color-obsidian)] text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase py-2.5 px-6 text-center shadow-md relative z-20">
         PRECISION PAINT PROTECTION & AUTOMOTIVE DETAILING STUDIO
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-[var(--color-obsidian)]/70 backdrop-blur-xl border-b border-[var(--color-border-subtle)]">
-        <div className="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
-          {/* Brand Logo */}
-          <Link href="/" className="flex flex-col justify-center">
+      <div className="bg-[var(--color-obsidian)]/80 backdrop-blur-2xl border-b border-[var(--color-border-subtle)] relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 h-24 flex items-center justify-between">
+          {/* Brand Logo - Made much larger and styled pure white to fix the blue color clash */}
+          <Link href="/" className="flex flex-col justify-center transition-opacity hover:opacity-80">
             <Image 
               src="/logo.png" 
               alt="Protomotive Logo" 
-              width={180} 
-              height={40} 
-              className="h-8 md:h-10 w-auto object-contain" 
+              width={260} 
+              height={80} 
+              className="h-12 md:h-16 w-auto object-contain brightness-0 invert" 
               priority
             />
           </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
               href={businessConfig.phone.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-7 py-3 bg-transparent border border-[var(--color-amber-gold)] text-[var(--color-amber-gold)] text-[11px] font-bold uppercase tracking-widest hover:bg-[var(--color-amber-gold)] hover:text-[var(--color-obsidian)] transition-all active:scale-95 shadow-sm"
+              className="inline-flex items-center gap-3 px-7 py-3 bg-[var(--color-amber-gold)] text-[var(--color-obsidian)] text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all active:scale-95 shadow-md"
             >
               <span>Book Consultation</span>
               <ArrowUpRight className="w-4 h-4" />

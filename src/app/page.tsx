@@ -68,7 +68,7 @@ export default function Home() {
           {/* Heavy Scrim to ensure text legibility against scratchy/reflective backgrounds */}
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-[var(--color-obsidian)]/60 to-black/30 pointer-events-none z-0" />
           
-          <div className="relative w-full h-full flex flex-col items-center justify-center pointer-events-none px-6 pt-32 pb-12 z-10">
+          <div className="relative w-full h-full flex flex-col items-center justify-start pointer-events-none px-6 pt-[22vh] md:pt-[28vh] pb-12 z-10">
             <div ref={headlineRef} className="max-w-5xl mx-auto text-center space-y-10 pointer-events-auto flex flex-col items-center mt-12 md:mt-0">
               
               <div className="flex flex-col items-center gap-4 opacity-0">
