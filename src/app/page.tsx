@@ -31,7 +31,10 @@ export default function Home() {
 
   useEffect(() => {
     if (headlineRef.current) {
-      gsap.fromTo(
+      // 1. Fade in on load
+      const tl = gsap.timeline();
+      
+      tl.fromTo(
         headlineRef.current.children,
         { opacity: 0, y: 30 },
         {
@@ -43,6 +46,19 @@ export default function Home() {
           delay: 0.2, // Small delay for loading
         }
       );
+
+      // 2. Fade out on scroll (so it doesn't obscure the car animation)
+      gsap.to(headlineRef.current, {
+        opacity: 0,
+        y: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "body", // use body to track overall scroll
+          start: "top top",
+          end: "500px top", // fades out over the first 500px of scrolling
+          scrub: true,
+        },
+      });
     }
   }, []);
 
