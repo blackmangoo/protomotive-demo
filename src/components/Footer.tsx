@@ -16,8 +16,8 @@ export default function Footer() {
               <Image 
                 src="/logo.png" 
                 alt="Protomotive Logo" 
-                width={200} 
-                height={60} 
+                width={354} 
+                height={169} 
                 className="h-8 w-auto object-contain brightness-0 invert opacity-90" 
               />
             </div>
