@@ -54,7 +54,7 @@ export default function Navbar() {
               width={420} 
               height={160} 
               className={`w-auto object-contain brightness-0 invert transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left ${
-                isScrolled ? "h-10 md:h-14" : "h-14 md:h-20"
+                isScrolled ? "h-14 md:h-20" : "h-20 md:h-28"
               }`} 
               priority
             />
