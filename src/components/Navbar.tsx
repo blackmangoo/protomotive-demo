@@ -38,7 +38,7 @@ export default function Navbar() {
         className={`relative z-10 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isScrolled 
             ? "bg-[var(--color-obsidian)]/90 backdrop-blur-2xl border-b border-[var(--color-border-subtle)] shadow-2xl" 
-            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent border-b border-transparent"
+            : "bg-[var(--color-obsidian)]/40 backdrop-blur-md border-b border-[var(--color-border-subtle)]/10"
         }`}
       >
         <div 
