@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { businessConfig } from "@/lib/business-config";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import HeroScrub from "@/components/HeroScrub";
@@ -28,6 +28,16 @@ function FadeUpRow({ children, reverse }: { children: React.ReactNode; reverse?:
 
 export default function Home() {
   const headlineRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (headlineRef.current) {
@@ -45,19 +55,6 @@ export default function Home() {
           delay: 0.2,
         }
       );
-
-      // Fade out tagline extra fast on scroll to prevent navbar collision
-      gsap.to(headlineRef.current.children[0], {
-        opacity: 0,
-        y: -20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: "100px top",
-          scrub: true,
-        },
-      });
 
       gsap.to(headlineRef.current, {
         opacity: 0,
@@ -82,7 +79,11 @@ export default function Home() {
           <div className="relative w-full h-full flex flex-col items-center justify-start pointer-events-none px-6 pt-[20vh] md:pt-[24vh] pb-12 z-10">
             <div ref={headlineRef} className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8 pointer-events-auto flex flex-col items-center mt-6 md:mt-0">
               
-              <div className="flex flex-col items-center gap-3 opacity-0">
+              <div 
+                className={`flex flex-col items-center gap-3 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  isScrolled ? "!opacity-0 -translate-y-4 pointer-events-none" : ""
+                }`}
+              >
                 <hr className="w-12 border-t-2 border-[var(--color-amber-gold)]/60 mx-auto" />
                 <span className="text-[10px] tracking-[0.25em] text-[var(--color-silver)] uppercase font-semibold">
                   {businessConfig.tagline}
