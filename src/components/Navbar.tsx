@@ -43,7 +43,7 @@ export default function Navbar() {
       >
         <div 
           className={`max-w-[1400px] mx-auto px-6 flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            isScrolled ? "h-20 md:h-24" : "h-24 md:h-32"
+            isScrolled ? "h-16 md:h-20" : "h-20 md:h-24"
           }`}
         >
           {/* Brand Logo */}
@@ -51,10 +51,10 @@ export default function Navbar() {
             <Image 
               src="/logo.png" 
               alt="Protomotive Logo" 
-              width={420} 
-              height={160} 
+              width={354} 
+              height={169} 
               className={`w-auto object-contain brightness-0 invert transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left ${
-                isScrolled ? "h-12 md:h-16" : "h-16 md:h-24"
+                isScrolled ? "h-10 md:h-12" : "h-14 md:h-16"
               }`} 
               priority
             />
