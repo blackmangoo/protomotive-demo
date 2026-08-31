@@ -118,7 +118,7 @@ export default function Home() {
               <div className={`lg:col-span-5 space-y-6 md:space-y-8 ${isReverse ? 'lg:order-2 lg:pl-12' : 'lg:pr-12'}`}>
                 <div className="space-y-4">
                   <span className="text-xs font-mono tracking-wider text-[var(--color-slate-muted)]">
-                    {idx + 1} — {service.category.toUpperCase()}
+                    0{idx + 1} — {service.category.toUpperCase()}
                   </span>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-wide">
                     {service.title}
