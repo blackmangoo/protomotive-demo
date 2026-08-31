@@ -46,6 +46,19 @@ export default function Home() {
         }
       );
 
+      // Fade out tagline extra fast on scroll to prevent navbar collision
+      gsap.to(headlineRef.current.children[0], {
+        opacity: 0,
+        y: -20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "100px top",
+          scrub: true,
+        },
+      });
+
       gsap.to(headlineRef.current, {
         opacity: 0,
         y: -50,
@@ -66,7 +79,7 @@ export default function Home() {
       <section className="relative">
         <HeroScrub frameCount={240} framePath="/assets/hero-frames/">
           
-          <div className="relative w-full h-full flex flex-col items-center justify-start pointer-events-none px-6 pt-[14vh] md:pt-[18vh] pb-12 z-10">
+          <div className="relative w-full h-full flex flex-col items-center justify-start pointer-events-none px-6 pt-[20vh] md:pt-[24vh] pb-12 z-10">
             <div ref={headlineRef} className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8 pointer-events-auto flex flex-col items-center mt-6 md:mt-0">
               
               <div className="flex flex-col items-center gap-3 opacity-0">
