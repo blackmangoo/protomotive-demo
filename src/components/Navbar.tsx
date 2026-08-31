@@ -1,29 +1,61 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { businessConfig } from "@/lib/business-config";
 import { Phone, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Trigger effect when scrolled down more than 40px
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Check initial position on mount
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+    <header className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
       {/* Top Announcement Bar - High Contrast */}
-      <div className="bg-white text-[var(--color-obsidian)] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase py-2.5 px-6 text-center shadow-md relative z-20">
-        PRECISION PAINT PROTECTION & AUTOMOTIVE DETAILING STUDIO
+      <div 
+        className={`bg-white text-[var(--color-obsidian)] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase px-6 text-center shadow-md relative z-20 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top overflow-hidden flex items-center justify-center ${
+          isScrolled ? "h-0 opacity-0" : "h-10 opacity-100"
+        }`}
+      >
+        <span>PPF · CERAMIC COATINGS · PAINT CORRECTION · VINYL WRAPS — LAHORE</span>
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-[var(--color-obsidian)]/85 backdrop-blur-2xl border-b border-[var(--color-border-subtle)] relative z-10">
-        <div className="max-w-[1400px] mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
-          {/* Brand Logo - Balanced luxury scale */}
-          <Link href="/" className="flex flex-col justify-center transition-opacity hover:opacity-80 py-1">
+      <div 
+        className={`relative z-10 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isScrolled 
+            ? "bg-[var(--color-obsidian)]/90 backdrop-blur-2xl border-b border-[var(--color-border-subtle)] shadow-2xl" 
+            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent border-b border-transparent"
+        }`}
+      >
+        <div 
+          className={`max-w-[1400px] mx-auto px-6 flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isScrolled ? "h-20 md:h-24" : "h-24 md:h-32"
+          }`}
+        >
+          {/* Brand Logo */}
+          <Link href="/" className="flex flex-col justify-center transition-opacity hover:opacity-80">
             <Image 
               src="/logo.png" 
               alt="Protomotive Logo" 
-              width={340} 
-              height={100} 
-              className="h-10 md:h-14 w-auto object-contain brightness-0 invert" 
+              width={420} 
+              height={160} 
+              className={`w-auto object-contain brightness-0 invert transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left ${
+                isScrolled ? "h-10 md:h-14" : "h-14 md:h-20"
+              }`} 
               priority
             />
           </Link>

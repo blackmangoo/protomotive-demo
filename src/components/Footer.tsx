@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Col 2: Services */}
           <div>
-            <h4 className="text-xs tracking-[0.2em] uppercase text-white mb-6 font-bold">Master Treatments</h4>
+            <h4 className="text-xs tracking-[0.2em] uppercase text-white mb-6 font-bold">Our Services</h4>
             <ul className="space-y-4 text-sm">
               {businessConfig.services.map((service) => (
                 <li key={service.id}>

@@ -78,8 +78,8 @@ export interface BusinessConfig {
 export const businessConfig: BusinessConfig = {
   name: "Protomotive",
   legalName: "Protomotive Car Care Studio",
-  tagline: "Professional Auto Detailing & Protection Studio",
-  shortBio: "Lahore's premier destination for high-end vehicle care. Specializing in TPU Paint Protection Film, Ceramic & Graphene coatings, and multi-stage paint correction.",
+  tagline: "Premium Paint Protection & Detailing — Lahore",
+  shortBio: "We protect and restore the cars you've worked hard to own. PPF, ceramic coatings, paint correction, and vinyl wraps — done right, under one roof in Lahore.",
   category: "Auto Detailing & Paint Protection Studio",
   phone: {
     display: "0300 5005666",
@@ -132,8 +132,8 @@ export const businessConfig: BusinessConfig = {
     {
       id: "detailing",
       title: "Paint Correction & Detailing",
-      shortDescription: "Eliminate swirl marks and scratches. Our multi-stage compound polishing restores your vehicle's factory gloss, followed by deep interior steam cleaning and leather conditioning.",
-      detailedDescription: "Multi-stage rotary compounding eliminating swirls.",
+      shortDescription: "Swirl marks, scratches, oxidation — we remove them all. Your paint is machine-polished back to a deep, mirror-like finish, and the interior gets a thorough steam clean and leather treatment.",
+      detailedDescription: "Multi-stage machine polishing and full interior restoration.",
       highlights: [],
       featured: true,
       category: "restoration",
@@ -142,8 +142,8 @@ export const businessConfig: BusinessConfig = {
     {
       id: "ppf",
       title: "Paint Protection Film (PPF)",
-      shortDescription: "The ultimate defense. We apply high-grade, self-healing TPU film that acts as an invisible shield against stone chips, scratches, and UV degradation.",
-      detailedDescription: "Self-healing TPU film engineered to shield factory paint.",
+      shortDescription: "A virtually invisible film that takes the hit so your paint doesn't. Protects against stone chips, road debris, minor scratches, and UV fading — with self-healing technology that keeps it looking fresh.",
+      detailedDescription: "Transparent self-healing film for long-term paint defense.",
       highlights: [],
       featured: true,
       category: "protection",
@@ -152,8 +152,8 @@ export const businessConfig: BusinessConfig = {
     {
       id: "ceramic-coating",
       title: "Ceramic & Graphene Coatings",
-      shortDescription: "Unmatched gloss and hydrophobic performance. These advanced molecular coatings actively repel dust, chemicals, and hard water spots.",
-      detailedDescription: "Permanent 9H/10H molecular clearcoat protection.",
+      shortDescription: "A permanent protective layer that bonds to your paint at a molecular level. Water beads and rolls right off, dust barely sticks, and that showroom gloss lasts for years — not weeks.",
+      detailedDescription: "Long-lasting hydrophobic coatings for gloss and easy maintenance.",
       highlights: [],
       featured: true,
       category: "protection",
@@ -162,8 +162,8 @@ export const businessConfig: BusinessConfig = {
     {
       id: "wraps",
       title: "Vehicle Wraps & Styling",
-      shortDescription: "Completely transform your vehicle's look with premium color-change vinyl wraps, while preserving the original paint underneath.",
-      detailedDescription: "Bespoke color change vinyl transformations.",
+      shortDescription: "Want a completely different look without touching your original paint? We wrap your vehicle in premium vinyl — matte, satin, gloss, or custom colors — fully reversible whenever you choose.",
+      detailedDescription: "Full and partial color-change vinyl wraps.",
       highlights: [],
       featured: false,
       category: "styling",
@@ -171,9 +171,9 @@ export const businessConfig: BusinessConfig = {
     },
     {
       id: "maintenance",
-      title: "Studio Maintenance",
-      shortDescription: "Keep your investment looking flawless. We offer specialized maintenance washes, oil changes, and routine care designed specifically for coated and filmed vehicles.",
-      detailedDescription: "Safe wash programs.",
+      title: "Aftercare & Maintenance",
+      shortDescription: "Your coating or PPF needs the right care to stay effective. We offer safe, pH-neutral maintenance washes and periodic inspections specifically designed for protected vehicles.",
+      detailedDescription: "Ongoing care programs for coated and wrapped vehicles.",
       highlights: [],
       featured: false,
       category: "maintenance",

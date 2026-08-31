@@ -77,7 +77,7 @@ export default function Home() {
               </div>
 
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white max-w-5xl mx-auto drop-shadow-2xl opacity-0 leading-[1.15] tracking-tight">
-                Shield your asset from <span className="italic font-light text-[var(--color-amber-gold)] block md:inline md:mt-0">Lahore's elements.</span>
+                Your car deserves <span className="italic font-light text-[var(--color-amber-gold)] block md:inline md:mt-0">flawless protection.</span>
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-light leading-relaxed opacity-0 drop-shadow-md">
@@ -168,13 +168,13 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 space-y-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="space-y-4 max-w-2xl">
-              <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-amber-gold)] font-bold">Visual Proof</span>
+              <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-amber-gold)] font-bold">See The Difference</span>
               <h2 className="text-3xl sm:text-5xl md:text-6xl text-white font-light tracking-tight">
-                Studio <span className="italic font-serif text-[var(--color-amber-gold)]">Execution</span>
+                Real <span className="italic font-serif text-[var(--color-amber-gold)]">Results</span>
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-[var(--color-slate-muted)] max-w-md leading-relaxed">
-              Every vehicle undergoes rigorous multi-point surface inspection in climate-controlled bays at our Barki Road facility.
+              This is what proper protection looks like — hydrophobic coatings in action, self-healing film at work, and paint polished back to factory finish.
             </p>
           </div>
 
@@ -190,8 +190,8 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">9H Molecular Coat</span>
-                <p className="text-base text-white font-medium">Hydrophobic Surface Reflection</p>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">Ceramic Coating</span>
+                <p className="text-base text-white font-medium">Water beads off instantly</p>
               </div>
             </div>
 
@@ -206,8 +206,8 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">Self-Healing TPU</span>
-                <p className="text-base text-white font-medium">Precision Edge-Wrapped Shield</p>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">Paint Protection Film</span>
+                <p className="text-base text-white font-medium">Invisible armor, self-healing finish</p>
               </div>
             </div>
 
@@ -222,8 +222,8 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-obsidian)] via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">Multi-Stage Rotary</span>
-                <p className="text-base text-white font-medium">100% Swirl-Free Mirror Gloss</p>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-amber-gold)]">Paint Correction</span>
+                <p className="text-base text-white font-medium">Before & after — zero swirl marks</p>
               </div>
             </div>
           </div>
@@ -236,12 +236,12 @@ export default function Home() {
           
           <div className="space-y-12">
             <div className="space-y-4">
-              <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-amber-gold)] font-bold">Intake & Consultation</span>
+              <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-amber-gold)] font-bold">Get In Touch</span>
               <h2 className="text-4xl sm:text-6xl text-white font-light tracking-tight">
-                Connect with the <span className="italic font-serif text-[var(--color-amber-gold)]">Studio</span>
+                Let's talk about <span className="italic font-serif text-[var(--color-amber-gold)]">your car</span>
               </h2>
               <p className="text-lg text-[var(--color-silver)] font-light max-w-md leading-loose">
-                Directly connect with our studio specialist to discuss bespoke PPF packages, ceramic tiers, and appointment availability.
+                Tell us what you drive and what you need — we'll recommend the right package, walk you through pricing, and book your slot.
               </p>
             </div>
 
